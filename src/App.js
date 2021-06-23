@@ -1,23 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+
+import React, { useState } from "react";
+
+import GameBoard from "./Component/GameBoard";
 
 function App() {
+  const [height, setHeight] = useState(8); // setting up initial table length
+  const [width, setwidth] = useState(8);
+  const [mines, setMines] = useState(10); // mine counts
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="gameApp">
+      <GameBoard height={height} width={width} mines={mines} />
     </div>
   );
 }
